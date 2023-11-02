@@ -116,7 +116,7 @@ def test(args, net, test_data_path_set):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='self supervised')
-    parser.add_argument('--root', default="/mnt/lustre/share/cp/zhangyi3/", type=str)
+    parser.add_argument('--root', default="dataset/", type=str)
 
     parser.add_argument('--ntype', default="gaussian", type=str, help='noise type')
     parser.add_argument('--model_path', default=None, type=str)
