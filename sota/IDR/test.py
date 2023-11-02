@@ -127,7 +127,7 @@ if __name__ == '__main__':
 
     args.zero_mean = False
     if args.model_path is None:
-        args.model_path = 'checkpoint/%s.pth' % args.ntype
+        args.model_path = 'check/%s.pth' % args.ntype
 
     print('Testing', args.model_path)
 
