@@ -1,0 +1,30 @@
+#!/bin/bash -l
+ 
+#$ -q volta.q
+ 
+#$ -l dgx=1
+##$ -l gpu=1  ## adapter selon besoin 
+ 
+#$ -l h_vmem=30G ## job will cancel if memory exceed
+ 
+#$ -N DnCNN
+ 
+#################"
+## Please adapt this script for your need
+#################
+ 
+## 1-vanila python 
+##python GPU_Program.py
+ 
+## 2-anaconda
+export PATH="/opt/anaconda3/bin:$PATH"
+export HOME=$WORK
+module load anaconda
+##python GPU_Program.py
+ 
+## 2-bis anaconda with env
+conda activate $WORK/conda/meso && python main_train_dncnn.py -opt options/train_dncnn.json
+ 
+##3-singularity 
+ 
+##singularity exec --nv tensorflow-gpu.simg python mytensorflow.py
