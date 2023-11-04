@@ -73,7 +73,7 @@ def add_gaussian_noise_to_images(input_folder, output_folder_clean, output_folde
     image_files = list_image_files(input_folder)
     y=0
     x=0
-    h=600
+    h=768
     w=1024
     for image_file in image_files:
         if image_file.endswith(('.jpg', '.jpeg', '.png')):
