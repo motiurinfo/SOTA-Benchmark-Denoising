@@ -106,37 +106,17 @@ for i, item in enumerate(files):
     imorig = imorig.type(dtype).to(device)
     imnoisy = imnoisy.type(dtype).to(device)
     with torch.no_grad():
-        if 'RNI15' in item:
-            if 'Audrey_Hepburn' in img_name:
-                noise_sigma = 10 / 255.
-            elif 'Bears' in img_name:
-                noise_sigma = 15 / 255.
-            elif 'Boy' in img_name:
-                noise_sigma = 45 / 255.
-            elif 'Dog' in img_name:
+        if 'SEM' in item:
+            if 'pollen.spd1.0098' in img_name:
+                noise_sigma = 42 / 255.
+            elif 'pollen.spd2.0098' in img_name:
+                noise_sigma = 35 / 255.
+            elif 'pollen.spd3.0098' in img_name:
                 noise_sigma = 28 / 255.
-            elif 'Flowers' in img_name:
-                noise_sigma = 70 / 255.
-            elif 'Frog' in img_name:
-                noise_sigma = 15 / 255.
-            elif 'Movie' in img_name:
-                noise_sigma = 12 / 255.
-            elif 'Pattern1' in img_name:
-                noise_sigma = 12 / 255.
-            elif 'Pattern2' in img_name:
-                noise_sigma = 40 / 255.
-            elif 'Pattern3' in img_name:
-                noise_sigma = 25 / 255.
-            elif 'Postcards' in img_name:
-                noise_sigma = 15 / 255.
-            elif 'Singer' in img_name:
-                noise_sigma = 30 / 255.  # 30
-            elif 'Stars' in img_name:
-                noise_sigma = 18 / 255.
-            elif 'Window' in img_name:
-                noise_sigma = 15 / 255.
-            elif 'Glass' in img_name:
-                noise_sigma = 15 / 255.
+            elif 'pollen.spd5.0098' in img_name:
+                noise_sigma = 14 / 255.
+            elif 'pollen.spd8.0098' in img_name:
+                noise_sigma = 5 / 255.
             nsigma = Variable(torch.FloatTensor([noise_sigma]).type(dtype))
             Genet_dn = Est_rgb_realnoise(imnoisy, nsigma)
             est_noise = imnoisy - Genet_dn
