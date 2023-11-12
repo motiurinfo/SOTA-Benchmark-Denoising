@@ -10,7 +10,7 @@ from models import *
 # Parse arguments
 parser = argparse.ArgumentParser(description="BoostNet Denoise")
 parser.add_argument('--nGPU', type=int, default=1, help='number of GPUs to use')
-parser.add_argument("--test_set", type=str, default="RNI15", help="RNI15")
+parser.add_argument("--test_set", type=str, default="SEM", help="RNI15")
 parser.add_argument("--dont_save_results", action='store_true', help="don't save output images")
 args = parser.parse_args()
 
