@@ -200,6 +200,12 @@ def define_G(opt):
                    mlp_ratio=opt_net['mlp_ratio'],
                    upsampler=opt_net['upsampler'],
                    resi_connection=opt_net['resi_connection'])
+    # ----------------------------------------
+    # SCUNet
+    # ----------------------------------------
+    elif net_type == 'scunet':
+        from models.network_scunet import SCUNet as net
+        netG = net()
 
     # ----------------------------------------
     # VRT
