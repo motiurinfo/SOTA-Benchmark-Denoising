@@ -205,7 +205,10 @@ def define_G(opt):
     # ----------------------------------------
     elif net_type == 'scunet':
         from models.network_scunet import SCUNet as net
-        netG = net()
+        netG = net(in_nc = opt_net['in_nc'],
+                   config = opt_net['config'],
+                   dim = opt_net['dim'],
+                   input_resolution = opt_net['input_resolution'])
 
     # ----------------------------------------
     # VRT
